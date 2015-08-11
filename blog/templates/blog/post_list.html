@@ -1,0 +1,18 @@
+{%	extends	"blog/base.html"	%}
+{% block content %}
+{%	for	post	in	posts	%}
+				<div	class="post" >
+								<div	class="date" >
+									<div class="container" >
+										<h1><a	href="{%	url	"blog.views.post_detail"	pk=post.pk	%}"> {{ post.title}}<h5>{{	post.published_date	}}  {{ post.author }} </h5></a></h1>
+										<h4> {{ post.text}} </h4>
+										<p><a class="btn btn-primary btn-lg" href="{%	url	"blog.views.post_detail"	pk=post.pk	%}" role="button">Learn more &raquo;</a></p>
+									  <hr>
+									</div>
+
+	 						</div>
+
+				</div>
+
+{%	endfor	%}
+{% endblock content %}
